@@ -1,0 +1,153 @@
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+
+const sectionStyle = (bg: string) =>
+  `bg-cover bg-center bg-no-repeat p-4 mb-4 rounded-xl shadow-xl ${bg}`;
+
+export default function Portfolio() {
+  return (
+    <div className="space-y-6 px-6 py-8 bg-gray-100">
+      {/* Home */}
+      <motion.div
+        className={`${sectionStyle("bg-[url('/bg-home.jpg')]")} text-white text-center`}
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <h1 className="text-4xl font-bold">Chandu</h1>
+        <p className="text-xl">P. Chandu</p>
+        <p className="mt-2 text-md">B.Tech Final Year | Aspiring Software Developer</p>
+      </motion.div>
+
+      {/* About */}
+      <motion.div
+        className={sectionStyle("bg-[url('/bg-about.jpg')]")}
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.7 }}
+      >
+        <Card>
+          <CardContent className="p-4 bg-white/90 backdrop-blur-md rounded-lg">
+            <h2 className="text-xl font-semibold">About Me</h2>
+            <p className="mt-2">
+              To work in an environment offering challenging career opportunities where I can apply and enhance my skills for solving technical problems.
+            </p>
+            <ul className="mt-2 text-sm text-gray-800 list-disc pl-5">
+              <li>B.Tech in CSE, Vemu Institute of Technology, 2026, 87%</li>
+              <li>Intermediate, Sri Vivekananda Junior College, 2022, 76%</li>
+              <li>SSC, R.K. Model School, 2020, 96%</li>
+            </ul>
+          </CardContent>
+        </Card>
+      </motion.div>
+
+      {/* Skills */}
+      <motion.div
+        className={sectionStyle("bg-[url('/bg-skills.jpg')]")}
+        initial={{ opacity: 0, x: 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.7 }}
+      >
+        <Card>
+          <CardContent className="p-4 bg-white/90 backdrop-blur-md rounded-lg">
+            <h2 className="text-xl font-semibold">Skills & Certifications</h2>
+            <p className="mt-2 font-semibold">Technical Skills:</p>
+            <ul className="list-disc pl-5 text-sm text-gray-800">
+              <li>Basic concepts of C, Python, Java, HTML, SQL, Data Analytics</li>
+            </ul>
+            <p className="mt-2 font-semibold">Certifications:</p>
+            <ul className="list-disc pl-5 text-sm text-gray-800">
+              <li>R Language</li>
+              <li>Basics of AI</li>
+              <li>Problem Solving (HackerRank)</li>
+              <li>Python</li>
+            </ul>
+          </CardContent>
+        </Card>
+      </motion.div>
+
+      {/* Projects */}
+      <motion.div
+        className={sectionStyle("bg-[url('/bg-projects.jpg')]")}
+        initial={{ scale: 0.9, opacity: 0 }}
+        whileInView={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.7 }}
+      >
+        <Card>
+          <CardContent className="p-4 bg-white/90 backdrop-blur-md rounded-lg">
+            <h2 className="text-xl font-semibold">Projects</h2>
+            <p className="mt-2 font-bold">Automatic License Plate Number Detection</p>
+            <p className="text-sm text-gray-800">
+              A computer vision system that recognizes vehicle number plates from images or video using ANPR techniques.
+            </p>
+          </CardContent>
+        </Card>
+      </motion.div>
+
+      {/* Workshops */}
+      <motion.div
+        className={sectionStyle("bg-[url('/bg-workshop.jpg')]")}
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <Card>
+          <CardContent className="p-4 bg-white/90 backdrop-blur-md rounded-lg">
+            <h2 className="text-xl font-semibold">Workshops & Seminars</h2>
+            <ul className="list-disc pl-5 text-sm text-gray-800">
+              <li>Soft Skills Workshop at Mahindra</li>
+              <li>C Programming Workshop (3 Days)</li>
+              <li>Python Programming Workshop (3 Days)</li>
+              <li>Seminar on Google Glasses</li>
+              <li>Team Presentation on College Campus</li>
+            </ul>
+          </CardContent>
+        </Card>
+      </motion.div>
+
+      {/* Achievements */}
+      <motion.div
+        className={sectionStyle("bg-[url('/bg-achievements.jpg')]")}
+        initial={{ rotateY: 90 }}
+        whileInView={{ rotateY: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <Card>
+          <CardContent className="p-4 bg-white/90 backdrop-blur-md rounded-lg">
+            <h2 className="text-xl font-semibold">Achievements & Strengths</h2>
+            <ul className="list-disc pl-5 text-sm text-gray-800">
+              <li>Elocution and Essay Competitions</li>
+              <li>School Band - 2 Years</li>
+              <li>Initiator, Adaptable, Team Worker</li>
+            </ul>
+          </CardContent>
+        </Card>
+      </motion.div>
+
+      {/* Contact */}
+      <motion.div
+        className={sectionStyle("bg-[url('/bg-contact.jpg')] text-center")}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        <Card>
+          <CardContent className="p-4 bg-white/90 backdrop-blur-md rounded-lg">
+            <h2 className="text-xl font-semibold">Contact Me</h2>
+            <p className="text-sm text-gray-800 mt-2">Email: puligundlachandu@gmail.com</p>
+            <p className="text-sm text-gray-800">Mobile: 8247462977</p>
+            <a
+              href="/resume2_1721745517.pdf"
+              download
+              className="inline-block mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+            >
+              Download Resume
+            </a>
+          </CardContent>
+        </Card>
+      </motion.div>
+    </div>
+  );
+}
